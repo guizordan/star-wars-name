@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" id="com.example.helloworld" version="1.0.0">
-  <name>Minimum Template</name>
+  <name>Your Star Wars Name</name>
   <description></description>
-  <author></author>
+  <author>ZORDAN</author>
   <content src="index.html" />
   <access origin="*"/>
   <allow-navigation href="*" />
@@ -10,7 +10,8 @@
   <allow-intent href="itms-apps:*" />
 
   <preference name="DisallowOverscroll" value="true"/>
-  <preference name="Orientation" value="default"/>
+  <preference name="UIWebViewBounce" value="false" />
+  <preference name="Orientation" value="portrait" />
 
   <preference name="loglevel" value="DEBUG" />
   <preference name="AndroidLaunchMode" value="singleTop" />
