@@ -1,0 +1,52 @@
+<html ng-app="Main">	
+	<head>
+		<meta charset="UTF-8" />
+
+		<!-- including bower resources -->	
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+		<!-- including the app controller -->
+		<script src="app.js"></script>
+
+		<!-- including stylesheets -->
+		<link rel="stylesheet" type="text/css"
+		href="css/star.css">
+		<link rel="stylesheet" type="text/css"
+		href="css/input.css">
+	   
+	</head>
+	<body ng-controller="mainController as mainCtrl">
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
+		<div id='title'>
+			<span>Your Star Wars Name</span><br>
+
+			<form ng-submit="mainCtrl.doWork()">
+
+				<input placeholder="Your first name" required
+				class="topcoat-text-input--large" ng-model="mainCtrl.first" type="text">
+
+				<input placeholder="Your last name" required
+				class="topcoat-text-input--large" ng-model="mainCtrl.last" type="text">
+
+				<input placeholder="Your mother's name" required
+				class="topcoat-text-input--large" ng-model="mainCtrl.mother" type="text">
+
+				<input placeholder="Your hometown" required
+				class="topcoat-text-input--large" ng-model="mainCtrl.city" type="text">
+
+				<div class="lightsaber">
+					<label for="obi-wan-example"></label>
+					<input type="submit" id="obi-wan-example">
+					<div class="switch"></div>
+					<div class="plasma obi-wan"></div>
+				</div>
+			</form>
+			<div ng-show="mainCtrl.result != null" style="color:white;">
+				<span>your Star Wars name is<a style="font-size:32px;">{{mainCtrl.result}}</a></span>
+			</div>
+		</div>	
+	</body>
+</html>
