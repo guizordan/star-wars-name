@@ -1,6 +1,9 @@
 .lightsaber{
-    top: 5%;
-    position: relative;
+    position: absolute;
+}
+
+#light-side{
+    right: 7%;
 }
 
 .lightsaber label {

@@ -2,6 +2,8 @@ angular.module('Main', [])
 	.controller( 'mainController', function ( $location ) {
 		var mainCtrl = this;
 		mainCtrl.doWork = function() {
+			mainCtrl.result = null;
+			mainCtrl.kind = null;
 			if(mainCtrl.age <= 21){
 				mainCtrl.result = CreatePadawanName();
 				mainCtrl.kind = 'padawan';
