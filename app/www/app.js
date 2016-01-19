@@ -1,13 +1,11 @@
 angular.module('Main', [])
-	.controller( 'mainController', function ( $location ) {
+	.controller( 'mainController', function ( ) {
 		var mainCtrl = this;
 		mainCtrl.doWork = function() {
-			mainCtrl.result = null;
-			mainCtrl.kind = null;
 			if(mainCtrl.age <= 21){
-				mainCtrl.result = CreatePadawanName();
+				mainCtrl.result = CreateJediName();
 				mainCtrl.kind = 'padawan';
-			} else if (!isJedi()) {
+			} else if (isJedi()) {
 				mainCtrl.result = CreateJediName();
 				mainCtrl.kind = 'jedi';
 			} else {
@@ -26,23 +24,6 @@ angular.module('Main', [])
 			var array = ["Darth", lastName];
 			document.getElementById("darth-vader").checked = true;
 			document.getElementById("obi-wan").checked = false;
-
-			return array.join(" "); 
-		}
-
-		function CreatePadawanName(){
-			var input = new GetInputFields();
-
-			var firstCrop = input.f.substring(0,2);
-			var lastCrop = input.l.substring(0,3);
-			var motherCrop = input.m.substring(0,2);
-			var cityCrop = input.c.substring(0,3);
-
-			var firstName = lastCrop.concat(firstCrop).capitalizeFirstLetter();
-			var lastName = motherCrop.concat(cityCrop).capitalizeFirstLetter();
-			var array = [firstName, lastName];
-			document.getElementById("darth-vader").checked = false;
-			document.getElementById("obi-wan").checked = true;
 
 			return array.join(" "); 
 		}
