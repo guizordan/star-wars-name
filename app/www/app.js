@@ -2,15 +2,23 @@ angular.module('Main', [])
 	.controller( 'mainController', function ( ) {
 		var mainCtrl = this;
 		mainCtrl.doWork = function() {
-			if(mainCtrl.age <= 21){
+			if (isJedi()) {
 				mainCtrl.result = CreateJediName();
-				mainCtrl.kind = 'padawan';
-			} else if (isJedi()) {
-				mainCtrl.result = CreateJediName();
-				mainCtrl.kind = 'jedi';
+				if (mainCtrl.age <= 21) {
+					mainCtrl.kind = 'padawan';
+				}
+				else if (mainCtrl.age > 21 && mainCtrl.age < 27) {
+					mainCtrl.kind = 'knight';
+				} else {
+					mainCtrl.kind = 'jedi';
+				}
 			} else {
 				mainCtrl.result = CreateSithName();
-				mainCtrl.kind = 'sith';
+				if (mainCtrl.age <= 21) {
+					mainCtrl.kind = 'padawan';
+				} else{
+					mainCtrl.kind = 'sith';
+				}				
 			}
 		}
 
